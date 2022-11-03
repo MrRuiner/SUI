@@ -1,0 +1,48 @@
+<navbar>
+    <brand> Obed.uz </brand>
+</navbar>
+
+<v-stack padding="40px" width="80%" margin="0 auto" gravity="end">
+<button trigger="add-modal" mode="open"> Add news </button>
+<table>
+    <thead>
+        <tr>
+            <th> # </th>
+            <th> Title </th>
+            <th> Poster </th>
+            <th> Text </th>
+            <th> Actions </th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td> 1 </td>
+            <td> Yangi sayt ishag tushdi, tun.uz tamom </td>
+            <td> https://poster.uz </td>
+            <td> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab aspernatur libero dolores quia quaerat omnis laboriosam placeat quis reiciendis iure quo magnam nemo, iusto sunt blanditiis quasi non vitae sequi sed minima dicta magni rerum consectetur! Suscipit aperiam odio quo? </td>
+            <td> 
+                <icon name="trash3" margin="15px">  </icon>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</v-stack>
+
+<dimmer id="add-modal">
+    <modal md>
+        <form action="/admin/news" method="post">
+            <heading> Add news </heading>
+            <content>
+                <v-stack>
+                    <input name="title" placeholder="Title" type="text">
+                    <input name="poster" placeholder="Poster" type="text">
+                    <textarea name="text" placeholder="Text" type="text"></textarea>
+                </v-stack>
+            </content>
+            <actions>
+                <button type="submit"> Add News </button>
+                <button type="reset" variant="secondary" trigger="add-modal" mode="close">Close</button>
+            </actions>
+        </form>
+    </modal>
+</dimmer>
